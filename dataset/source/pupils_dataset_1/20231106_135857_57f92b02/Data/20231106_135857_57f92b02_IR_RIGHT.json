@@ -1,0 +1,506 @@
+{
+  "version": "5.0.2",
+  "flags": {
+    "sunglasses": true,
+    "half rim": false,
+    "rimless": false,
+    "mask": false,
+    "dark skin": false
+  },
+  "shapes": [
+    {
+      "label": "iris",
+      "points": [
+        [
+          813.9,
+          951.3
+        ],
+        [
+          814.5,
+          957
+        ],
+        [
+          816.1,
+          962.2
+        ],
+        [
+          819.3,
+          968.3
+        ],
+        [
+          823.6,
+          973.1
+        ],
+        [
+          828.8,
+          977
+        ],
+        [
+          835,
+          979.3
+        ],
+        [
+          843,
+          980
+        ],
+        [
+          850,
+          979.2
+        ],
+        [
+          856.3,
+          977.3
+        ],
+        [
+          862.1,
+          973.8
+        ],
+        [
+          865.9,
+          969.8
+        ],
+        [
+          868.4,
+          963.8
+        ],
+        [
+          869.1,
+          956.4
+        ],
+        [
+          868,
+          949
+        ],
+        [
+          865.8,
+          942.9
+        ],
+        [
+          861.4,
+          936.9
+        ],
+        [
+          856.5,
+          932.8
+        ],
+        [
+          849.2,
+          929
+        ],
+        [
+          842,
+          927.5
+        ],
+        [
+          834.3,
+          928
+        ],
+        [
+          827.6,
+          930
+        ],
+        [
+          822.1,
+          933.2
+        ],
+        [
+          818,
+          937.7
+        ],
+        [
+          816,
+          941.7
+        ],
+        [
+          814.3,
+          946.4
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "polygon",
+      "flags": {}
+    },
+    {
+      "label": "pupil",
+      "points": [
+        [
+          540.8,
+          964.7
+        ],
+        [
+          537.8,
+          965.6
+        ],
+        [
+          535.1,
+          968.1
+        ],
+        [
+          533.6,
+          971.2
+        ],
+        [
+          533.6,
+          975.1
+        ],
+        [
+          534.9,
+          978.4
+        ],
+        [
+          537.4,
+          980.5
+        ],
+        [
+          541.5,
+          981.5
+        ],
+        [
+          545.9,
+          981.3
+        ],
+        [
+          548.8,
+          980.1
+        ],
+        [
+          551.1,
+          977.2
+        ],
+        [
+          551.9,
+          973.3
+        ],
+        [
+          551.5,
+          970
+        ],
+        [
+          549.9,
+          967.2
+        ],
+        [
+          547.7,
+          965.6
+        ],
+        [
+          545,
+          964.8
+        ],
+        [
+          543.4,
+          964.5
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "polygon",
+      "flags": {}
+    },
+    {
+      "label": "pupil",
+      "points": [
+        [
+          832.2,
+          953.9
+        ],
+        [
+          833.3,
+          957
+        ],
+        [
+          835.2,
+          959.8
+        ],
+        [
+          838.3,
+          962.3
+        ],
+        [
+          841.6,
+          962.9
+        ],
+        [
+          845.2,
+          962.8
+        ],
+        [
+          848.2,
+          961.4
+        ],
+        [
+          849.7,
+          958.8
+        ],
+        [
+          850.4,
+          955.5
+        ],
+        [
+          849.8,
+          951.5
+        ],
+        [
+          848.3,
+          948.8
+        ],
+        [
+          846.1,
+          946.5
+        ],
+        [
+          843.6,
+          944.8
+        ],
+        [
+          840.6,
+          944.2
+        ],
+        [
+          837.7,
+          944.4
+        ],
+        [
+          835,
+          945.6
+        ],
+        [
+          833.1,
+          947.2
+        ],
+        [
+          832.2,
+          949.6
+        ],
+        [
+          832,
+          951.7
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "polygon",
+      "flags": {}
+    },
+    {
+      "label": "iris",
+      "points": [
+        [
+          513.7,
+          971.4
+        ],
+        [
+          514.3,
+          977.1
+        ],
+        [
+          515.9,
+          982.3
+        ],
+        [
+          519.1,
+          988.4
+        ],
+        [
+          523.3,
+          993.1
+        ],
+        [
+          528.6,
+          997.1
+        ],
+        [
+          534.8,
+          999.4
+        ],
+        [
+          542.8,
+          1000.1
+        ],
+        [
+          549.8,
+          999.3
+        ],
+        [
+          556.1,
+          997.4
+        ],
+        [
+          561.9,
+          993.9
+        ],
+        [
+          565.6,
+          989.9
+        ],
+        [
+          568.1,
+          983.9
+        ],
+        [
+          568.9,
+          976.5
+        ],
+        [
+          568.1,
+          969
+        ],
+        [
+          565.9,
+          961.8
+        ],
+        [
+          561.7,
+          955.8
+        ],
+        [
+          556.2,
+          951.8
+        ],
+        [
+          549,
+          949.1
+        ],
+        [
+          541.8,
+          947.6
+        ],
+        [
+          534,
+          948.1
+        ],
+        [
+          527.3,
+          950.1
+        ],
+        [
+          521.8,
+          953.3
+        ],
+        [
+          517.8,
+          957.8
+        ],
+        [
+          515.8,
+          961.8
+        ],
+        [
+          514.1,
+          966.5
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "polygon",
+      "flags": {}
+    }
+  ],
+  "imagePath": "20231106_135857_57f92b02_IR_RIGHT.png",
+  "imageData": null,
+  "imageHeight": 1600,
+  "imageWidth": 1300,
+  "annotator": "Daria",
+  "MetaData": {
+    "SessionID": "20231106_135857_57f92b02",
+    "Id": 12457,
+    "Distance": 587.456,
+    "Stage": 5,
+    "ModifiedData": "2023-11-06T13:58:57.7389409",
+    "Country": "United States",
+    "SparkUser": "e****e@b****e.com",
+    "DeviceSerialNumber": "SP4-0322-1278",
+    "SparkMeasurementId": 196,
+    "State": "Texas",
+    "CustomerId": "0002136",
+    "UID": "57f92b02-86c6-4c76-a0ce-cc76f23a27ee",
+    "MeasurementData": {
+      "Id": 12433,
+      "MeasurementId": 12457,
+      "Pd": 67.5,
+      "MonoPdLeft": 33,
+      "MonoPdRight": 34.5,
+      "NearPd": 62.5,
+      "NearMonoPdLeft": 30.5,
+      "NearMonoPdRight": 32,
+      "FhFrameLeft": 27,
+      "FhFrameRight": 29,
+      "FhBoxLeft": 27,
+      "FhBoxRight": 29,
+      "Dbl": 21,
+      "HBox": 53.5,
+      "VBox": 40,
+      "Pano": 7.5,
+      "EdRx": 57.5,
+      "EdStock": 64,
+      "Bvd": 10.5,
+      "Panto": 10.5,
+      "Pd_Modified": 67.5,
+      "MonoPdLeft_Modified": 33,
+      "MonoPdRight_Modified": 34.5,
+      "NearPd_Modified": 62.5,
+      "NearMonoPdLeft_Modified": 30.5,
+      "NearMonoPdRight_Modified": 32,
+      "FhFrameLeft_Modified": 27,
+      "FhFrameRight_Modified": 29,
+      "FhBoxLeft_Modified": 27,
+      "FhBoxRight_Modified": 29,
+      "Dbl_Modified": 21,
+      "HBox_Modified": 53.5,
+      "VBox_Modified": 40,
+      "Pano_Modified": 7.5,
+      "EdRx_Modified": 57.5,
+      "EdStock_Modified": 64,
+      "Bvd_Modified": 10.5,
+      "Panto_Modified": 10.5,
+      "FrameTypeId": 0
+    }
+  },
+  "CalculatedPoints": {
+    "left_dbl": [
+      null,
+      null
+    ],
+    "right_dbl": [
+      null,
+      null
+    ],
+    "left_fh": [
+      null,
+      null
+    ],
+    "right_fh": [
+      null,
+      null
+    ],
+    "left_a": [
+      null,
+      null
+    ],
+    "right_a": [
+      null,
+      null
+    ],
+    "left_b_bottom": [
+      null,
+      null
+    ],
+    "right_b_bottom": [
+      null,
+      null
+    ],
+    "left_b_top": [
+      null,
+      null
+    ],
+    "right_b_top": [
+      null,
+      null
+    ],
+    "left_pupil": [
+      null,
+      null
+    ],
+    "right_pupil": [
+      null,
+      null
+    ]
+  }
+}

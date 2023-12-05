@@ -1,0 +1,502 @@
+{
+  "version": "5.0.2",
+  "flags": {
+    "sunglasses": true,
+    "half rim": false,
+    "rimless": false,
+    "mask": false,
+    "dark skin": false
+  },
+  "shapes": [
+    {
+      "label": "pupil",
+      "points": [
+        [
+          742.7,
+          845.9
+        ],
+        [
+          739.7,
+          847.2
+        ],
+        [
+          737.5,
+          849.3
+        ],
+        [
+          735.9,
+          853.2
+        ],
+        [
+          735.7,
+          857.2
+        ],
+        [
+          737,
+          860.7
+        ],
+        [
+          738.8,
+          863
+        ],
+        [
+          742.8,
+          864.4
+        ],
+        [
+          747.3,
+          864.2
+        ],
+        [
+          751.1,
+          862.8
+        ],
+        [
+          753.5,
+          859.2
+        ],
+        [
+          754,
+          855.1
+        ],
+        [
+          753.3,
+          850.9
+        ],
+        [
+          751.5,
+          847.8
+        ],
+        [
+          748.6,
+          846.4
+        ],
+        [
+          745.9,
+          845.8
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "polygon",
+      "flags": {}
+    },
+    {
+      "label": "iris",
+      "points": [
+        [
+          717.1,
+          839.3
+        ],
+        [
+          715,
+          843.5
+        ],
+        [
+          713.4,
+          849.1
+        ],
+        [
+          712.8,
+          855.1
+        ],
+        [
+          713.2,
+          861.3
+        ],
+        [
+          714.8,
+          867.1
+        ],
+        [
+          717.7,
+          872.7
+        ],
+        [
+          721.7,
+          877.9
+        ],
+        [
+          727.1,
+          882.2
+        ],
+        [
+          733.7,
+          885.6
+        ],
+        [
+          742.4,
+          887
+        ],
+        [
+          750.5,
+          887
+        ],
+        [
+          758,
+          885.8
+        ],
+        [
+          765,
+          882
+        ],
+        [
+          771,
+          876.4
+        ],
+        [
+          775.2,
+          869.2
+        ],
+        [
+          777,
+          860
+        ],
+        [
+          777,
+          851.1
+        ],
+        [
+          775.2,
+          842.4
+        ],
+        [
+          771.4,
+          835.8
+        ],
+        [
+          766.3,
+          830.4
+        ],
+        [
+          758.8,
+          826.7
+        ],
+        [
+          751.1,
+          824.9
+        ],
+        [
+          742.8,
+          824.4
+        ],
+        [
+          735.8,
+          825.4
+        ],
+        [
+          729.8,
+          827.2
+        ],
+        [
+          724,
+          830.7
+        ],
+        [
+          720,
+          834.3
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "polygon",
+      "flags": {}
+    },
+    {
+      "label": "pupil",
+      "points": [
+        [
+          434.3,
+          855.5
+        ],
+        [
+          431.5,
+          856.9
+        ],
+        [
+          429.7,
+          858.7
+        ],
+        [
+          428.2,
+          861.6
+        ],
+        [
+          427.6,
+          864.5
+        ],
+        [
+          428.1,
+          867.4
+        ],
+        [
+          429.5,
+          869.7
+        ],
+        [
+          432.1,
+          871
+        ],
+        [
+          435.4,
+          871.3
+        ],
+        [
+          439,
+          870.5
+        ],
+        [
+          441.5,
+          869
+        ],
+        [
+          443.6,
+          866.1
+        ],
+        [
+          444.2,
+          862.8
+        ],
+        [
+          443.8,
+          859
+        ],
+        [
+          442,
+          856.6
+        ],
+        [
+          439.3,
+          855.4
+        ],
+        [
+          437.1,
+          855.1
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "polygon",
+      "flags": {}
+    },
+    {
+      "label": "iris",
+      "points": [
+        [
+          406.3,
+          850.5
+        ],
+        [
+          404.3,
+          856.5
+        ],
+        [
+          403.6,
+          863.7
+        ],
+        [
+          404.1,
+          871.4
+        ],
+        [
+          405.6,
+          877.9
+        ],
+        [
+          408.6,
+          884.3
+        ],
+        [
+          412.8,
+          889.3
+        ],
+        [
+          418.8,
+          892.8
+        ],
+        [
+          426.5,
+          894.8
+        ],
+        [
+          436.2,
+          894.8
+        ],
+        [
+          444.7,
+          893.8
+        ],
+        [
+          452.9,
+          890.3
+        ],
+        [
+          459.1,
+          884.6
+        ],
+        [
+          463.3,
+          877.9
+        ],
+        [
+          465.6,
+          869.6
+        ],
+        [
+          466.3,
+          861.2
+        ],
+        [
+          464.8,
+          852.2
+        ],
+        [
+          461.6,
+          845.3
+        ],
+        [
+          456.9,
+          840
+        ],
+        [
+          450.7,
+          835.9
+        ],
+        [
+          442.4,
+          833.6
+        ],
+        [
+          433.5,
+          833.3
+        ],
+        [
+          425.8,
+          834.2
+        ],
+        [
+          419.1,
+          836.7
+        ],
+        [
+          413.8,
+          840.4
+        ],
+        [
+          409.8,
+          844.8
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "polygon",
+      "flags": {}
+    }
+  ],
+  "imagePath": "20231107_183010_5ece17c8_IR_LEFT.png",
+  "imageData": null,
+  "imageHeight": 1600,
+  "imageWidth": 1300,
+  "annotator": "Daria",
+  "MetaData": {
+    "SessionID": "20231107_183010_5ece17c8",
+    "Id": 12514,
+    "Distance": 547.35,
+    "Stage": 5,
+    "ModifiedData": "2023-11-07T18:30:10.2584067",
+    "Country": "Spain",
+    "SparkUser": "s****s@g****l.com",
+    "DeviceSerialNumber": "SP4-0322-0747",
+    "SparkMeasurementId": 92,
+    "State": "",
+    "CustomerId": "15294",
+    "UID": "5ece17c8-8dd9-4609-b88f-6cf97c88373b",
+    "MeasurementData": {
+      "Id": 12490,
+      "MeasurementId": 12514,
+      "Pd": 63.5,
+      "MonoPdLeft": 32.7,
+      "MonoPdRight": 30.799,
+      "NearPd": 59.299,
+      "NearMonoPdLeft": 30.6,
+      "NearMonoPdRight": 28.699,
+      "FhFrameLeft": 29.299,
+      "FhFrameRight": 34.9,
+      "FhBoxLeft": 29.799,
+      "FhBoxRight": 35.5,
+      "Dbl": 14.1,
+      "HBox": 56,
+      "VBox": 48.4,
+      "Pano": 7.199,
+      "EdRx": 60,
+      "EdStock": 71.9,
+      "Bvd": 17,
+      "Panto": 8.899,
+      "Pd_Modified": 63.5,
+      "MonoPdLeft_Modified": 32.7,
+      "MonoPdRight_Modified": 30.799,
+      "NearPd_Modified": 59.299,
+      "NearMonoPdLeft_Modified": 30.6,
+      "NearMonoPdRight_Modified": 28.699,
+      "FhFrameLeft_Modified": 29.299,
+      "FhFrameRight_Modified": 34.9,
+      "FhBoxLeft_Modified": 29.799,
+      "FhBoxRight_Modified": 35.5,
+      "Dbl_Modified": 14.1,
+      "HBox_Modified": 56,
+      "VBox_Modified": 48.4,
+      "Pano_Modified": 7.199,
+      "EdRx_Modified": 60,
+      "EdStock_Modified": 71.9,
+      "Bvd_Modified": 17,
+      "Panto_Modified": 8.899,
+      "FrameTypeId": 0
+    }
+  },
+  "CalculatedPoints": {
+    "left_dbl": [
+      null,
+      null
+    ],
+    "right_dbl": [
+      null,
+      null
+    ],
+    "left_fh": [
+      null,
+      null
+    ],
+    "right_fh": [
+      null,
+      null
+    ],
+    "left_a": [
+      null,
+      null
+    ],
+    "right_a": [
+      null,
+      null
+    ],
+    "left_b_bottom": [
+      null,
+      null
+    ],
+    "right_b_bottom": [
+      null,
+      null
+    ],
+    "left_b_top": [
+      null,
+      null
+    ],
+    "right_b_top": [
+      null,
+      null
+    ],
+    "left_pupil": [
+      null,
+      null
+    ],
+    "right_pupil": [
+      null,
+      null
+    ]
+  }
+}

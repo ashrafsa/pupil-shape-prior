@@ -1,0 +1,534 @@
+{
+  "version": "5.0.2",
+  "flags": {
+    "sunglasses": true,
+    "half rim": false,
+    "rimless": false,
+    "mask": false,
+    "dark skin": false
+  },
+  "shapes": [
+    {
+      "label": "pupil",
+      "points": [
+        [
+          484,
+          915.6
+        ],
+        [
+          481.2,
+          916.1
+        ],
+        [
+          478.6,
+          917.2
+        ],
+        [
+          476.7,
+          919
+        ],
+        [
+          475.6,
+          921.7
+        ],
+        [
+          475.4,
+          924.9
+        ],
+        [
+          476,
+          927.6
+        ],
+        [
+          477.6,
+          929.9
+        ],
+        [
+          480.9,
+          931.5
+        ],
+        [
+          484.7,
+          931.6
+        ],
+        [
+          488.4,
+          930.8
+        ],
+        [
+          491,
+          928.9
+        ],
+        [
+          492.6,
+          926.3
+        ],
+        [
+          493.2,
+          923.2
+        ],
+        [
+          492.4,
+          920
+        ],
+        [
+          490.9,
+          917.7
+        ],
+        [
+          488.3,
+          916.1
+        ],
+        [
+          486.5,
+          915.7
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "polygon",
+      "flags": {}
+    },
+    {
+      "label": "iris",
+      "points": [
+        [
+          742.3,
+          906.9
+        ],
+        [
+          741.5,
+          911
+        ],
+        [
+          741.3,
+          916
+        ],
+        [
+          741.9,
+          920.3
+        ],
+        [
+          743.3,
+          925.3
+        ],
+        [
+          745.6,
+          929.4
+        ],
+        [
+          749.4,
+          933.6
+        ],
+        [
+          754,
+          936.4
+        ],
+        [
+          759.6,
+          938.6
+        ],
+        [
+          765.9,
+          939.5
+        ],
+        [
+          772,
+          939.6
+        ],
+        [
+          777.8,
+          938.9
+        ],
+        [
+          783.7,
+          937.1
+        ],
+        [
+          788.7,
+          934.3
+        ],
+        [
+          792.3,
+          929.6
+        ],
+        [
+          794.7,
+          923.9
+        ],
+        [
+          795.6,
+          917.4
+        ],
+        [
+          795.1,
+          911.5
+        ],
+        [
+          793.2,
+          905.1
+        ],
+        [
+          790.4,
+          900.8
+        ],
+        [
+          786.1,
+          896.5
+        ],
+        [
+          781.3,
+          893.9
+        ],
+        [
+          775.7,
+          892
+        ],
+        [
+          769.4,
+          891
+        ],
+        [
+          762.7,
+          891.3
+        ],
+        [
+          756.5,
+          892.6
+        ],
+        [
+          751.7,
+          895.1
+        ],
+        [
+          747.8,
+          898
+        ],
+        [
+          744.6,
+          901.7
+        ],
+        [
+          743.4,
+          903.7
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "polygon",
+      "flags": {}
+    },
+    {
+      "label": "iris",
+      "points": [
+        [
+          454.7,
+          916.6
+        ],
+        [
+          454.4,
+          922.3
+        ],
+        [
+          455.4,
+          928.2
+        ],
+        [
+          457.6,
+          934.9
+        ],
+        [
+          461.3,
+          941.2
+        ],
+        [
+          465.8,
+          945.4
+        ],
+        [
+          472.3,
+          948.9
+        ],
+        [
+          478.8,
+          950.4
+        ],
+        [
+          485.2,
+          950.6
+        ],
+        [
+          491.2,
+          949.6
+        ],
+        [
+          496.9,
+          947.6
+        ],
+        [
+          501.9,
+          943.9
+        ],
+        [
+          505.9,
+          938.9
+        ],
+        [
+          508.6,
+          931.5
+        ],
+        [
+          509.1,
+          923
+        ],
+        [
+          508.3,
+          916.5
+        ],
+        [
+          506.3,
+          909.9
+        ],
+        [
+          503.3,
+          904.4
+        ],
+        [
+          499,
+          899.9
+        ],
+        [
+          493.7,
+          896.9
+        ],
+        [
+          488.1,
+          895.2
+        ],
+        [
+          482,
+          894.6
+        ],
+        [
+          476,
+          895.1
+        ],
+        [
+          470.6,
+          896.7
+        ],
+        [
+          466.4,
+          898.6
+        ],
+        [
+          462.1,
+          901.5
+        ],
+        [
+          458.6,
+          905.3
+        ],
+        [
+          456.6,
+          908.9
+        ],
+        [
+          455.3,
+          913
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "polygon",
+      "flags": {}
+    },
+    {
+      "label": "pupil",
+      "points": [
+        [
+          766.2,
+          907.2
+        ],
+        [
+          763.1,
+          907.8
+        ],
+        [
+          761,
+          909.1
+        ],
+        [
+          759.5,
+          911.1
+        ],
+        [
+          758.5,
+          913.8
+        ],
+        [
+          758.4,
+          917.3
+        ],
+        [
+          759,
+          919.6
+        ],
+        [
+          760.5,
+          921.5
+        ],
+        [
+          763.1,
+          922.8
+        ],
+        [
+          766.3,
+          923.2
+        ],
+        [
+          769.2,
+          922.8
+        ],
+        [
+          771.6,
+          921.8
+        ],
+        [
+          773.5,
+          919.6
+        ],
+        [
+          774.4,
+          916.7
+        ],
+        [
+          774.2,
+          913.3
+        ],
+        [
+          773.4,
+          910.7
+        ],
+        [
+          771.6,
+          908.8
+        ],
+        [
+          769.1,
+          907.6
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "polygon",
+      "flags": {}
+    }
+  ],
+  "imagePath": "20231104_180015_315dfc9a_IR_RIGHT.png",
+  "imageData": null,
+  "imageHeight": 1600,
+  "imageWidth": 1300,
+  "annotator": "Anna",
+  "MetaData": {
+    "SessionID": "20231104_180015_315dfc9a",
+    "Id": 12409,
+    "Distance": 571.242,
+    "Stage": 5,
+    "ModifiedData": "2023-11-04T18:00:15.6412904",
+    "Country": "Canada",
+    "SparkUser": "a****r@h****l.com",
+    "DeviceSerialNumber": "SP4-0322-1158",
+    "SparkMeasurementId": 21,
+    "State": "",
+    "CustomerId": "13284",
+    "UID": "315dfc9a-2bb5-45ad-a7b1-f391315a0ec8",
+    "MeasurementData": {
+      "Id": 12385,
+      "MeasurementId": 12409,
+      "Pd": 60.5,
+      "MonoPdLeft": 31,
+      "MonoPdRight": 29.5,
+      "NearPd": 56.5,
+      "NearMonoPdLeft": 29,
+      "NearMonoPdRight": 27.5,
+      "FhFrameLeft": 29,
+      "FhFrameRight": 29,
+      "FhBoxLeft": 29.5,
+      "FhBoxRight": 29,
+      "Dbl": 20,
+      "HBox": 52,
+      "VBox": 44.5,
+      "Pano": 5,
+      "EdRx": 56,
+      "EdStock": 65,
+      "Bvd": 12.5,
+      "Panto": 0.5,
+      "Pd_Modified": 60.5,
+      "MonoPdLeft_Modified": 31,
+      "MonoPdRight_Modified": 29.5,
+      "NearPd_Modified": 56.5,
+      "NearMonoPdLeft_Modified": 29,
+      "NearMonoPdRight_Modified": 27.5,
+      "FhFrameLeft_Modified": 29,
+      "FhFrameRight_Modified": 29,
+      "FhBoxLeft_Modified": 29.5,
+      "FhBoxRight_Modified": 29,
+      "Dbl_Modified": 20,
+      "HBox_Modified": 52,
+      "VBox_Modified": 44.5,
+      "Pano_Modified": 5,
+      "EdRx_Modified": 56,
+      "EdStock_Modified": 65,
+      "Bvd_Modified": 12.5,
+      "Panto_Modified": 0.5,
+      "FrameTypeId": 1
+    }
+  },
+  "CalculatedPoints": {
+    "left_dbl": [
+      null,
+      null
+    ],
+    "right_dbl": [
+      null,
+      null
+    ],
+    "left_fh": [
+      null,
+      null
+    ],
+    "right_fh": [
+      null,
+      null
+    ],
+    "left_a": [
+      null,
+      null
+    ],
+    "right_a": [
+      null,
+      null
+    ],
+    "left_b_bottom": [
+      null,
+      null
+    ],
+    "right_b_bottom": [
+      null,
+      null
+    ],
+    "left_b_top": [
+      null,
+      null
+    ],
+    "right_b_top": [
+      null,
+      null
+    ],
+    "left_pupil": [
+      null,
+      null
+    ],
+    "right_pupil": [
+      null,
+      null
+    ]
+  }
+}
