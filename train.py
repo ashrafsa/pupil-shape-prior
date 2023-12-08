@@ -16,11 +16,11 @@ os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 # Hyperparameters
 LEARNING_RATE = 1e-4
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
-BATCH_SIZE = 4  # 7
+BATCH_SIZE = 10  # 7
 NUM_EPOCHS = 500
 NUM_WORKERS = 4
-IMAGE_HEIGHT = 800
-IMAGE_WIDTH = 600
+IMAGE_HEIGHT = 400
+IMAGE_WIDTH = 300
 PIN_MEMORY = True
 LOAD_MODEL = False
 DATASET_PATH = r'./dataset/source'
@@ -28,6 +28,7 @@ TRAIN_IMG_DIR = rf'{DATASET_PATH}/train_image'
 TRAIN_MASK_DIR = rf'{DATASET_PATH}/train_mask'
 VAL_IMG_DIR = rf'{DATASET_PATH}/val_image'
 VAL_MASK_DIR = rf'{DATASET_PATH}/val_mask'
+save_images = False
 
 
 def train_fn(loader, model, optimizer, loss_fn, scaler):
@@ -136,15 +137,16 @@ def main():
             max_epoch_acc = epoch
             max_acc = acc
 
-        filename = fr'unet_ps_{IMAGE_HEIGHT}x{IMAGE_WIDTH}_Epoch{epoch + 1}of{NUM_EPOCHS}_Acc{round(acc, 3)}_Dice{round(dice, 3)}.pth.tar'
+        filename = fr'models/unet_ps_{IMAGE_HEIGHT}x{IMAGE_WIDTH}_Epoch{epoch + 1}of{NUM_EPOCHS}_Acc{round(acc, 3)}_Dice{round(dice, 3)}.pth.tar'
         shutil.copy(r'checkpoint.pth.tar', filename)
+        if save_images:
+            folder = fr'saved_images/'
+            folder = folder + fr'i_{IMAGE_HEIGHT}x{IMAGE_WIDTH}Epoch{epoch + 1}of{NUM_EPOCHS}/'
+            if not os.path.exists(folder):
+                os.makedirs(folder, exist_ok=True)
 
-        folder = fr'saved_images/'
-        folder = folder + fr'saved_images{IMAGE_HEIGHT}x{IMAGE_WIDTH}Epoch{epoch + 1}of{NUM_EPOCHS}/'
-        if not os.path.exists(folder):
-            os.makedirs(folder, exist_ok=True)
+            save_predictions_as_imgs(val_loader, model, device=DEVICE, folder=folder)
 
-        save_predictions_as_imgs(val_loader, model, device=DEVICE, folder=folder)
         end_time = time.time()
         print(
             f'\r\n Current maximal scores:\r\n\tMax Dice score is {max_dice:.4f} in epoch number: {max_epoch_dice + 1}')
@@ -154,3 +156,7 @@ def main():
     print(f'Max Dice score is {max_dice:.4f} in epoch number: {max_epoch_dice + 1}')
     print(f'Max Accuracy score is {max_acc:.4f} in epoch number: {max_epoch_acc + 1}')
     print('|---------------------------------------------------------------------|')
+
+
+if __name__ == '__main__':
+    main()

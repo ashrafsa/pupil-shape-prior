@@ -1,7 +1,12 @@
+import cv2
+import matplotlib
+import numpy as np
 import torch
 import torchvision
+from matplotlib import pyplot as plt
 from torch.utils.data import DataLoader
 
+import UnetModel
 from dataset.segmentation_dataset import PupilsDataSet
 
 
@@ -44,6 +49,7 @@ def save_checkpoint(state, filename="checkpoint.pth.tar"):
 
 
 def check_accuracy(loader, model, device='cuda'):
+    print('=> Check accuracy')
     num_correct = 0
     num_pixels = 0
     dice_score = 0
@@ -65,3 +71,39 @@ def check_accuracy(loader, model, device='cuda'):
     print(f'Dice score: {dice_score:.3f}')
     model.train()
     return acc.item(), dice_score.item()
+
+
+def load_model(path='checkpoint.pth.tar', device='cpu'):
+    model = UnetModel.UNet(in_channels=1, out_channels=1).to(device)
+    checkpoint = torch.load(path)
+    model.load_state_dict(checkpoint['state_dict'])
+    return model
+
+
+def scale_contour(cnt, scale):
+    M = cv2.moments(cnt)
+    cx = int(M['m10'] / M['m00'])
+    cy = int(M['m01'] / M['m00'])
+
+    cnt_norm = cnt - [cx, cy]
+    cnt_scaled = cnt_norm * scale
+    cnt_scaled = cnt_scaled + [cx, cy]
+    cnt_scaled = cnt_scaled.astype(np.int32)
+
+    return cnt_scaled
+
+
+def visualize_predicted_contour(image, contours, opencv_vis=False):
+    # cv2.drawContours(image, contours, -1, (255, 0, 0), 2, cv2.LINE_AA)
+    cv2.drawContours(image, contours, -1, (255, 0, 0), 2, cv2.LINE_4)
+
+    if opencv_vis:
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        image = cv2.resize(image, (600, 800))
+        cv2.imshow('img output', image)
+        cv2.waitKey()
+        cv2.destroyAllWindows()
+    else:
+        matplotlib.use('Qt5Agg')
+        plt.imshow(image)
+        plt.show()

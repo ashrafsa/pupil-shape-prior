@@ -60,33 +60,51 @@ val_mask_dir = os.path.join(ROOT, 'val_mask')
 test_dir = os.path.join(ROOT, 'test_image')
 
 if os.path.isdir(train_dir):
-    os.removedirs(train_dir)
-if os.path.isdir(train_dir):
-    os.removedirs(train_dir)
-if os.path.isdir(test_dir):
-    os.removedirs(test_dir)
+    shutil.rmtree(train_dir)
 os.makedirs(train_dir)
+
+if os.path.isdir(train_mask_dir):
+    shutil.rmtree(train_mask_dir)
+os.makedirs(train_mask_dir)
+
+if os.path.isdir(val_dir):
+    shutil.rmtree(val_dir)
 os.makedirs(val_dir)
+
+if os.path.isdir(val_mask_dir):
+    shutil.rmtree(val_mask_dir)
+os.makedirs(val_mask_dir)
+
+if os.path.isdir(test_dir):
+    shutil.rmtree(test_dir)
 os.makedirs(test_dir)
 
-ds_path = os.path.join(ROOT, 'pupils_dataset_labels_1')
-ds = PupilsInstanceDataset(ds_path)
-train_ds, val_ds, test_ds = split(ds.img_names, 0.2, 0.1, 50)
+images_path = os.path.join(ROOT, 'pupils_dataset_labels_1')
+masks_path = os.path.join(ROOT, 'pupils_dataset_labels_1_mask')
+dataset = PupilsInstanceDataset(images_path)
+train_ds, val_ds, test_ds = split(dataset.img_names, 0.2, 0.1, 50)
 
 for item in train_ds:
-    src = os.path.join(ds_path, item)
-    dst = os.path.join(train_dir, item)
-    shutil.copy(src, dst)
+    src_img = os.path.join(images_path, item)
+    src_mask = os.path.join(masks_path, item)
+    train_img = os.path.join(train_dir, item)
+    shutil.copy(src_img, train_img)
+    train_mask = os.path.join(train_mask_dir, item)
+    shutil.copy(src_mask, train_mask)
     print(item)
 
 for item in val_ds:
-    src = os.path.join(ds_path, item)
-    dst = os.path.join(val_dir, item)
-    shutil.copy(src, dst)
+    src_img = os.path.join(images_path, item)
+    src_mask = os.path.join(masks_path, item)
+    val_img = os.path.join(val_dir, item)
+    shutil.copy(src_img, val_img)
+    val_mask = os.path.join(val_mask_dir, item)
+    shutil.copy(src_mask, val_mask)
     print(item)
 
 for item in test_ds:
-    src = os.path.join(ds_path, item)
-    dst = os.path.join(test_dir, item)
-    shutil.copy(src, dst)
+    src_img = os.path.join(images_path, item)
+    src_mask = os.path.join(masks_path, item)
+    test_img = os.path.join(test_dir, item)
+    shutil.copy(src_img, test_img)
     print(item)
