@@ -30,9 +30,9 @@ def combine_labels(raw_images: str, raw_labels: str):
     print(images_list)
 
 
-# combine_labels("pupils_dataset_1", "pupils_dataset_labels_1")
+# combine_labels("pupils_dataset_1", "images")
 def save_masks():
-    ds = PupilsInstanceDataset(os.path.join(ROOT, 'pupils_dataset_labels_1'))
+    ds = PupilsInstanceDataset(os.path.join(ROOT, 'images'))
     print(ds.img_names)
     ds.save_masks_of_all_images()
     pass
@@ -79,8 +79,8 @@ if os.path.isdir(test_dir):
     shutil.rmtree(test_dir)
 os.makedirs(test_dir)
 
-images_path = os.path.join(ROOT, 'pupils_dataset_labels_1')
-masks_path = os.path.join(ROOT, 'pupils_dataset_labels_1_mask')
+images_path = os.path.join(ROOT, 'images')
+masks_path = os.path.join(ROOT, 'masks')
 dataset = PupilsInstanceDataset(images_path)
 train_ds, val_ds, test_ds = split(dataset.img_names, 0.2, 0.1, 50)
 
