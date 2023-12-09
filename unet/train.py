@@ -87,7 +87,6 @@ def main():
 
     # create instance of the model
     model = UNet(in_channels=1, out_channels=1).to(DEVICE)
-
     # loss function
     loss_fn = nn.BCEWithLogitsLoss()
 
