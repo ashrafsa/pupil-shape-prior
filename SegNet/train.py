@@ -17,7 +17,7 @@ import torchmetrics as TM
 
 from SegNet.dataset import OxfordIIITPetsAugmented
 from SegNet.model import ImageSegmentationDSC
-from SegNet.utils import working_dir, get_device, transform_dict, to_device, print_test_dataset_masks, \
+from SegNet.utils import working_dir, get_device,  to_device, print_test_dataset_masks, \
     t_custom_iou_loss, IoULoss, save_model_checkpoint, print_model_parameters, t2img, trimap2f, args_to_dict, ToDevice, \
     tensor_trimap
 
@@ -102,7 +102,7 @@ pets_test_orig = torchvision.datasets.OxfordIIITPet(root=pets_path_test,
 
 (train_pets_input, train_pets_target) = pets_train_orig[0]
 
-# train_pets_input.show()
+# train_input.show()
 
 
 # Spot check a segmentation mask image after post-processing it

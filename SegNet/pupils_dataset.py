@@ -10,26 +10,6 @@ from torchvision.datasets.utils import verify_str_arg
 
 
 class PupilsDataset(VisionDataset):
-    """
-
-    Args:
-        root (string): Root directory of the dataset.
-        split (string, optional): The dataset split, supports ``"trainval"`` (default) or ``"test"``.
-        target_types (string, sequence of strings, optional): Types of target to use. Can be ``category`` (default) or
-            ``segmentation``. Can also be a list to output a tuple with all specified target types. The types represent:
-
-                - ``category`` (int): Label for one of the 37 pet categories.
-                - ``segmentation`` (PIL image): Segmentation trimap of the image.
-
-            If empty, ``None`` will be returned as target.
-
-        transform (callable, optional): A function/transform that  takes in a PIL image and returns a transformed
-            version. E.g, ``transforms.RandomCrop``.
-        target_transform (callable, optional): A function/transform that takes in the target and transforms it.
-        download (bool, optional): If True, downloads the dataset from the internet and puts it into
-            ``root/oxford-iiit-pet``. If dataset is already downloaded, it is not downloaded again.
-    """
-
     def __init__(
             self,
             root: str,
@@ -38,7 +18,7 @@ class PupilsDataset(VisionDataset):
             transform: Optional[Callable] = None,
             target_transform: Optional[Callable] = None,
     ):
-        self._split = verify_str_arg(split, "split", ("trainval", "test"))
+        self._split = verify_str_arg(split, "split", ("train", "test"))
 
         super().__init__(root, transforms=transforms, transform=transform, target_transform=target_transform)
         self.base_folder = pathlib.Path(self.root)

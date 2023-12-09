@@ -91,18 +91,18 @@ def train_loop(model, loader, test_data, epochs, optimizer, scheduler, save_path
 # ------ Validation: Check if CUDA is available
 print(f"CUDA: {torch.cuda.is_available()}")
 pupils_path_train = os.path.join(working_dir, 'source', 'train')
-pets_path_test = os.path.join(working_dir, 'source', 'test')
-pets_train_orig = PupilsDataset(root=pupils_path_train, split="trainval")
-pets_test_orig = PupilsDataset(root=pets_path_test, split="test")
+pupils_path_test = os.path.join(working_dir, 'source', 'test')
+pupils_train_orig = PupilsDataset(root=pupils_path_train, split="trainval")
+pupils_test_orig = PupilsDataset(root=pupils_path_test, split="test")
 
-(train_pets_input, train_pets_target) = pets_train_orig[0]
+(train_input, train_target) = pupils_train_orig[0]
 
-# train_pets_input.show()
+# train_input.show()
 
 
 # Spot check a segmentation mask image after post-processing it
 # via trimap2f().
-t2img(trimap2f(train_pets_target)).show()
+t2img(trimap2f(train_target)).show()
 
 # Create the train and test instances of the data loader for the
 # Oxford IIIT Pets dataset with random augmentations applied.
@@ -128,7 +128,7 @@ transform_dict = args_to_dict(
     ]),
 )
 train = PupilDatasetAugmented(root=pupils_path_train, split="trainval", **transform_dict)
-test = PupilDatasetAugmented(root=pets_path_test, split="test", **transform_dict)
+test = PupilDatasetAugmented(root=pupils_path_test, split="test", **transform_dict)
 train_loader = DataLoader(train, batch_size=64, shuffle=True, )
 test_loader = DataLoader(test, batch_size=21, shuffle=True, )
 
