@@ -20,7 +20,7 @@ from SegNet.model import ImageSegmentationDSC
 from SegNet.pupils_dataset import PupilsDataset, PupilDatasetAugmented
 from SegNet.utils import working_dir, get_device, to_device, print_test_dataset_masks, \
     t_custom_iou_loss, IoULoss, save_model_checkpoint, print_model_parameters, t2img, trimap2f, args_to_dict, ToDevice, \
-    tensor_trimap
+    tensor_trimap, show_images, img2t, tensor_mask, restore_pil_i, print_test_dataset_masks_pupils
 
 
 # Train the model for a single epoch
@@ -90,19 +90,18 @@ def train_loop(model, loader, test_data, epochs, optimizer, scheduler, save_path
 
 # ------ Validation: Check if CUDA is available
 print(f"CUDA: {torch.cuda.is_available()}")
-pupils_path_train = os.path.join(working_dir, 'source', 'train')
-pupils_path_test = os.path.join(working_dir, 'source', 'test')
-pupils_train_orig = PupilsDataset(root=pupils_path_train, split="trainval")
+pupils_path_train = working_dir + '/PupilsData/train'
+pupils_path_test = working_dir + '/PupilsData/test'
+pupils_train_orig = PupilsDataset(root=pupils_path_train, split="train")
 pupils_test_orig = PupilsDataset(root=pupils_path_test, split="test")
 
 (train_input, train_target) = pupils_train_orig[0]
 
-# train_input.show()
-
+#train_input.convert('RGB').show()
 
 # Spot check a segmentation mask image after post-processing it
 # via trimap2f().
-t2img(trimap2f(train_target)).show()
+#t2img(trimap2f(train_target)).show()
 
 # Create the train and test instances of the data loader for the
 # Oxford IIIT Pets dataset with random augmentations applied.
@@ -111,7 +110,10 @@ t2img(trimap2f(train_target)).show()
 # to avoid disturbing the pixel values in the provided segmentation
 # mask.
 transform_dict = args_to_dict(
-    pre_transform=T.ToTensor(),
+    pre_transform=T.Compose([
+        T.ToTensor(),
+        T.Lambda(restore_pil_i)
+    ]),
     pre_target_transform=T.ToTensor(),
     common_transform=T.Compose([
         ToDevice(get_device()),
@@ -121,13 +123,14 @@ transform_dict = args_to_dict(
     ]),
     post_transform=T.Compose([
         # Color Jitter as data augmentation.
-        T.ColorJitter(contrast=0.3),
+        #T.ColorJitter(contrast=0.3),
+
     ]),
     post_target_transform=T.Compose([
-        T.Lambda(tensor_trimap),
+        T.Lambda(tensor_mask),
     ]),
 )
-train = PupilDatasetAugmented(root=pupils_path_train, split="trainval", **transform_dict)
+train = PupilDatasetAugmented(root=pupils_path_train, split="train", **transform_dict)
 test = PupilDatasetAugmented(root=pupils_path_test, split="test", **transform_dict)
 train_loader = DataLoader(train, batch_size=64, shuffle=True, )
 test_loader = DataLoader(test, batch_size=21, shuffle=True, )
@@ -148,7 +151,7 @@ print(model_dsc(to_device(train_inputs)).shape)
 # is generated as expected.
 save_path = os.path.join(working_dir, "segnet_dsc_images")
 os.makedirs(save_path, exist_ok=True)
-print_test_dataset_masks(model_dsc, test_inputs, test_targets, epoch=0, save_path=None, show_plot=True)
+#print_test_dataset_masks_pupils(model_dsc, test_inputs, test_targets, epoch=0, save_path=None, show_plot=True)
 
 to_device(model_dsc)
 optimizer2 = torch.optim.Adam(model_dsc.parameters(), lr=0.001)

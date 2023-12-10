@@ -3,6 +3,7 @@ import os.path
 import pathlib
 from typing import Any, Callable, Optional, Sequence, Tuple, Union
 
+import numpy as np
 import torch
 from PIL import Image
 from torchvision.datasets import VisionDataset
@@ -32,8 +33,9 @@ class PupilsDataset(VisionDataset):
     def __getitem__(self, idx: int) -> Tuple[Any, Any]:
         img_path = os.path.join(self.images_folder, self.images[idx])
         mask_path = os.path.join(self.masks_folder, self.images[idx])
-        image = Image.open(img_path).convert("RGB")
-        mask = Image.open(mask_path).convert("RGB")
+        image = Image.open(img_path).convert("I")
+        mask = Image.open(mask_path).convert("L")
+
         if self.transforms:
             image, mask = self.transforms(image, mask)
 

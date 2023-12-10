@@ -1,7 +1,7 @@
 from enum import IntEnum
 
 import torch
-from torch import nn
+from torch import nn, Tensor
 import os
 from os import path
 import torchvision
@@ -28,6 +28,12 @@ working_dir = "../dataset"
 
 class TrimapClasses(IntEnum):
     PET = 0
+    BACKGROUND = 1
+    BORDER = 2
+
+
+class MaskClasses(IntEnum):
+    PUPIL = 0
     BACKGROUND = 1
     BORDER = 2
 
@@ -171,6 +177,75 @@ def print_test_dataset_masks(model, test_pets_targets, test_pets_labels, epoch, 
     # end if
 
 
+def print_test_dataset_masks_pupils(model, test_targets, test_labels, epoch, save_path, show_plot):
+    to_device(model.eval())
+    predictions = model(to_device(test_targets))
+    test_labels = to_device(test_labels)
+    pred = nn.Softmax(dim=1)(predictions)
+
+    pred_labels = pred.argmax(dim=1)
+    # Add a value 1 dimension at dim=1
+    pred_labels = pred_labels.unsqueeze(1)
+    # print("pred_labels.shape: {}".format(pred_labels.shape))
+    pred_mask = pred_labels.to(torch.float)
+
+    # accuracy = prediction_accuracy(test_pets_labels, pred_labels)
+    iou = to_device(TM.classification.MulticlassJaccardIndex(2, average='micro', ignore_index=MaskClasses.PUPIL))
+    iou_accuracy = iou(pred_mask, test_labels)
+    pixel_metric = to_device(TM.classification.MulticlassAccuracy(2, average='micro'))
+    pixel_accuracy = pixel_metric(pred_labels, test_labels)
+    custom_iou = IoUMetric(pred, test_labels)
+    title = f'Epoch: {epoch:02d}, Accuracy[Pixel: {pixel_accuracy:.4f}, IoU: {iou_accuracy:.4f}, Custom IoU: {custom_iou:.4f}]'
+    print(title)
+    # print(f"Accuracy: {accuracy:.4f}")
+
+    # Close all previously open figures.
+    close_figures()
+
+    fig = plt.figure(figsize=(10, 12))
+    fig.suptitle(title, fontsize=12)
+
+    fig.add_subplot(3, 1, 1)
+    plt.imshow(t2img(torchvision.utils.make_grid(test_targets, nrow=7)))
+    plt.axis('off')
+    plt.title("Targets")
+
+    fig.add_subplot(3, 1, 2)
+    plt.imshow(t2img(torchvision.utils.make_grid(test_labels.float() / 2.0, nrow=7)))
+    plt.axis('off')
+    plt.title("Ground Truth Labels")
+
+    fig.add_subplot(3, 1, 3)
+    plt.imshow(t2img(torchvision.utils.make_grid(pred_mask / 2.0, nrow=7)))
+    plt.axis('off')
+    plt.title("Predicted Labels")
+
+    if save_path is not None:
+        plt.savefig(os.path.join(save_path, f"epoch_{epoch:02}.png"), format="png", bbox_inches="tight", pad_inches=0.4)
+    # end if
+
+    if show_plot is False:
+        close_figures()
+    else:
+        plt.show()
+    # end if
+
+
+def show_images(images):
+    # Close all previously open figures.
+    close_figures()
+
+    fig = plt.figure(figsize=(10, 12))
+    fig.suptitle('', fontsize=12)
+
+    fig.add_subplot(3, 1, 1)
+    plt.imshow(t2img(torchvision.utils.make_grid(images, nrow=7)))
+    plt.axis('off')
+    plt.title("Images")
+    plt.show()
+    pass
+
+
 # end def
 def check_dataset_accuracy(model, loader):
     to_device(model.eval())
@@ -218,18 +293,29 @@ def check_dataset_accuracy(model, loader):
         f"Pixel Accuracy: {pixel_tensor.mean():.4f}, IoU Accuracy: {iou_tensor.mean():.4f}, Custom IoU Accuracy: {custom_iou_tensor.mean():.4f}")
 
 
-def tensor_trimap(t):
+def tensor_trimap(t: Tensor):
     x = t * 255
     x = x.to(torch.long)
     x = x - 1
     return x
 
 
+def tensor_mask(t: Tensor):
+    x = t * 255
+    x = x.to(torch.long)
+    return x
+
+
+def restore_pil_i(t: Tensor):
+    t = t.float()
+    t /= 256.0
+    t = t.div(255.0)
+    rgb = torch.cat([t, t, t], dim=0)
+    return rgb
+
+
 def args_to_dict(**kwargs):
     return kwargs
-
-
-
 
 
 # Define a custom IoU Metric for validating the model.
